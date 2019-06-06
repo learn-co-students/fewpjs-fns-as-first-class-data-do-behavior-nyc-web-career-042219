@@ -10,12 +10,16 @@ function handleClick(e) {
 /* Write your implementation of greet() */
 function greet(timeString) {
   let message = ""
-  time = timeString.substring(0,2)
+
+  let timeH = timeString.split(':')[0]
+  let time = parseInt(timeH, 10)
+  console.log(time)
+
   if (time < 12) {
     message = "Good Morning"
-  } else if (time > 12 && time < 17) {
+  } else if (time >= 12 && time < 17) {
     message = "Good Afternoon"
-  } else if (time > 17 && time < 25) {
+  } else if (time >= 17 && time < 25) {
     message = "Good Evening"
   } else {
     message = "Please enter a time"
